@@ -28,7 +28,7 @@ public class GenericGraph<T> {
 	
 	
 	public void getVertexCount() {
-		System.out.println(map.keySet().size());
+		System.out.println("The graph has "+map.keySet().size()+" vertex");
 	}
 	
 	public void getEdgeCount(boolean biDir) {
@@ -40,23 +40,23 @@ public class GenericGraph<T> {
 		if(biDir) {
 			count = count/2;
 		}
-		System.out.println("The graph has " +count+ "edges");
+		System.out.println("The graph has " +count+ " edges");
 	}
 	 	
 	
 	public void hasVertex(T s) {
 		if(map.containsKey(s)) {
-			System.out.println("The graph contains " +s +"as a verted");
+			System.out.println("The graph contains " +s +" as a vertex");
 		}else {
-			System.out.println("The graph does not contains " +s +"as a verted");
+			System.out.println("The graph does not contains " +s +" as a vertex");
 		}
 	}
 	
 	public void hasEdge(T s, T d) {
 		if(map.get(s).contains(d)) {
-			System.out.println("The graph has an edge b/w "+s+ "and "+d);
+			System.out.println("The graph has an edge b/w "+s+ " and "+d);
 		}else {
-			System.out.println("The graph has no edge b/w "+s+ "and "+d);
+			System.out.println("The graph has no edge b/w "+s+ " and "+d);
 		}
 	}
 
@@ -86,5 +86,9 @@ class Driver {
 		g1.addEdges(4, 2, true);
 		g1.addEdges(3, 1, true);
 		System.out.println(g1.toString());
+		g1.getVertexCount();
+		g1.getEdgeCount(true);
+		g1.hasEdge(3, 4);
+		g1.hasVertex(5);
 	}
 }
